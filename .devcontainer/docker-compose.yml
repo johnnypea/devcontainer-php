@@ -1,0 +1,9 @@
+services:
+    php-unit:
+        build:
+            context: php-unit
+            target: development
+        ports:
+            - 8080:8080
+        volumes:
+            - ..:/var/www/html

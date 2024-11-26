@@ -1,0 +1,6 @@
+{
+    "name": "Sharp Consumer Remote",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "php-unit",
+    "workspaceFolder": "/var/www/html"
+}
