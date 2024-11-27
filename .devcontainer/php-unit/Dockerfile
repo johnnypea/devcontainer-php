@@ -15,7 +15,7 @@ USER root
 ARG USER_ID
 ARG GROUP_ID
 
-RUN apt-get -y install sudo
+RUN apt-get update && apt-get -y install sudo
 
 # Use the build arguments to change the UID 
 # and GID of www-data while also changing 
