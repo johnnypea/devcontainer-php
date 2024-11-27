@@ -1,7 +1,7 @@
 ############################################
 # Base Image
 ############################################
-FROM serversideup/php:8.4-fpm-nginx-bookworm AS base
+FROM serversideup/php:8.4-unit AS base
 
 ############################################
 # Development Image
