@@ -15,18 +15,18 @@ USER root
 ARG USER_ID
 ARG GROUP_ID
 
-RUN apt-get update && apt-get -y install sudo
+# RUN apt-get update && apt-get -y install sudo
 
-# Use the build arguments to change the UID 
-# and GID of www-data while also changing 
-# the file permissions for NGINX
-RUN docker-php-serversideup-set-id www-data $USER_ID:$GROUP_ID && \
-    \
-    # Update the file permissions for our NGINX service to match the new UID/GID
-    docker-php-serversideup-set-file-permissions --owner $USER_ID:$GROUP_ID --service unit
+# # Use the build arguments to change the UID 
+# # and GID of www-data while also changing 
+# # the file permissions for NGINX
+# RUN docker-php-serversideup-set-id www-data $USER_ID:$GROUP_ID && \
+#     \
+#     # Update the file permissions for our NGINX service to match the new UID/GID
+#     docker-php-serversideup-set-file-permissions --owner $USER_ID:$GROUP_ID --service unit
 
-# Drop back to our unprivileged user
-USER www-data
+# # Drop back to our unprivileged user
+# USER www-data
 
 ############################################
 # Production Image
