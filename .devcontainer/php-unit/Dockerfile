@@ -11,6 +11,14 @@ FROM base AS development
 # Switch to root so we can do root things
 USER root
 
+# Use the build arguments to change the UID 
+# and GID of www-data while also changing 
+# the file permissions for NGINX
+RUN docker-php-serversideup-set-id www-data $USER_ID:$GROUP_ID && \
+    \
+    # Update the file permissions for our NGINX service to match the new UID/GID
+    docker-php-serversideup-set-file-permissions --owner $USER_ID:$GROUP_ID --service unit
+
 # Drop back to our unprivileged user
 USER www-data
 
