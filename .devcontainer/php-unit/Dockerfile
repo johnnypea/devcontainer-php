@@ -15,6 +15,7 @@ USER root
 ARG USER_ID
 ARG GROUP_ID
 
+# Daytona needs sudo
 RUN apt-get update && apt-get -y install sudo
 
 # # Use the build arguments to change the UID 
